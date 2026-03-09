@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect} from "react";
-import Button from "@/components/button";
+import Button from "@/components/Button";
 import { Menu, X } from "lucide-react";
 const links = [
   {
