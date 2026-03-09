@@ -1,8 +1,31 @@
-import { Download } from "lucide-react";
+export const AnimatedBorderButton = ({ children, href, onClick, ...props }) => {
+  const handleClick = (e) => {
+    if (onClick) {
+      onClick(e);
+    }
 
-export const AnimatedBorderButton = ({ children }) => {
+    if (e.defaultPrevented || !href) {
+      return;
+    }
+
+    if (href.startsWith("#")) {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      window.location.hash = href.slice(1);
+      return;
+    }
+
+    window.open(href, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <button
+      type="button"
+      onClick={handleClick}
+      {...props}
       className="relative bg-transparent border border-border 
         text-foreground hover:border-primary/50 transition-all 
         duration-1000 focus:outline-none focus-visible:ring-2 

@@ -1,27 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Sora:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+
 @theme {
-  --color-background: #0f1418;
-  --color-foreground: #f0f2f5;
+  --color-background: #061018;
+  --color-foreground: #e7f0ff;
 
-  --color-card: #141a1f;
+  --color-card: #0d1b2c;
 
-  --color-primary: #20b2a6;
-  --color-primary-foreground: #ffffff;
+  --color-primary: #ff6b35;
+  --color-primary-foreground: #fff7f2;
 
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #20b2a6;
+  --color-secondary: #12253a;
+  --color-secondary-foreground: #ffd6c8;
 
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+  --color-muted: #1a2a3d;
+  --color-muted-foreground: #a9bbce;
 
-  --color-border: #242b32;
+  --color-border: #25384f;
 
-  --radius: 0.75rem;
+  --radius: 0.9rem;
 
-  --color-highlight: #f5a623;
-  --color-surface: #1a2329;
-
+  --color-highlight: #56cfe1;
+  --color-surface: #102136;
 }
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -32,33 +34,61 @@
   }
 
   body {
-    background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Inter", sans-serif;
+    font-family: "Sora", sans-serif;
+    background:
+      radial-gradient(circle at 10% 12%, color-mix(in srgb, var(--color-primary) 20%, transparent) 0%, transparent 40%),
+      radial-gradient(circle at 85% 18%, color-mix(in srgb, var(--color-highlight) 18%, transparent) 0%, transparent 35%),
+      radial-gradient(circle at 52% 78%, color-mix(in srgb, #0f2742 65%, transparent) 0%, transparent 45%),
+      linear-gradient(160deg, #030911 0%, #061018 44%, #091a2a 100%);
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    z-index: -1;
   }
 
   .font-serif {
-    font-family: "Playfair Display", serif;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 0.02em;
   }
 }
-@layer components{
-  .glass{
-    background-color: color-mix(in srgb, var(--color-surface) 50%,transparent);
-    backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-  };
-  .glass-strong{
-    background-color: color-mix(in srgb, var(--color-surface) 80%,transparent);
-    backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-  };
-  .glow-text{
-    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+    backdrop-filter: blur(18px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
+    box-shadow: 0 16px 40px color-mix(in srgb, #02060b 60%, transparent);
   }
-  .glow-border{
-    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent), inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    backdrop-filter: blur(18px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 28px color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .glow-border {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-border) 50%, transparent),
+      0 0 35px color-mix(in srgb, var(--color-primary) 22%, transparent),
+      inset 0 0 24px color-mix(in srgb, var(--color-primary) 6%, transparent);
   }
 }
+
 @layer utilities {
   @keyframes fade-in {
     from {
@@ -72,69 +102,83 @@
       filter: blur(0);
     }
   }
-  @keyframes slow-drift{
+
+  @keyframes slow-drift {
     0%,
-    100%{
+    100% {
       transform: translate(0, 0);
     }
-    25%{
+    25% {
       transform: translate(20px, -30px);
     }
-    50%{
+    50% {
       transform: translate(-15px, -20px);
     }
-    75%{
+    75% {
       transform: translate(30px, 10px);
     }
   }
-  @keyframes float{
+
+  @keyframes float {
     0%,
-    100%{
+    100% {
       transform: translateY(0);
     }
-    50%{
+    50% {
       transform: translateY(-10px);
     }
   }
-  @keyframes marquee{
-    0%{
+
+  @keyframes marquee {
+    0% {
       transform: translateX(0);
     }
-    100%{
+    100% {
       transform: translateX(-50%);
     }
   }
+
   .animate-fade-in {
     animation: fade-in 0.6s ease-out both;
   }
+
   .animate-float {
     animation: float 4s ease-in-out infinite;
   }
-  .animate-marquee{
+
+  .animate-marquee {
     animation: marquee 25s linear infinite;
     will-change: transform;
   }
+
   .animation-delay-100 {
     animation-delay: 100ms;
   }
+
   .animation-delay-200 {
     animation-delay: 200ms;
   }
+
   .animation-delay-300 {
     animation-delay: 300ms;
   }
+
   .animation-delay-400 {
     animation-delay: 400ms;
   }
+
   .animation-delay-500 {
     animation-delay: 500ms;
   }
+
   .animation-delay-600 {
     animation-delay: 600ms;
   }
+
   .animation-delay-800 {
     animation-delay: 800ms;
   }
+
   @keyframes animated-border {
     0% {
       stroke-dashoffset: 400;
@@ -143,15 +187,20 @@
       stroke-dashoffset: -550;
     }
   }
-  .group:hover .animated-border-path{
+
+  .group:hover .animated-border-path {
     animation: animated-border 1.5s linear infinite;
   }
-  .animated-border:hover{
-    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+
+  .animated-border:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 16%, transparent);
     backdrop-filter: blur(16px);
-    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 24%, transparent);
   }
-  timeline-glow{
-    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent), 0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+
+  .timeline-glow {
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }

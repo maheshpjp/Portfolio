@@ -46,7 +46,7 @@ function projects() {
           <span className='text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in'>Featured Work</span>
           <h2 className='text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground'>
             Projects 
-            <span className="font-serif italic font-normal text-white"> I've Built</span>
+            <span className="font-serif italic font-normal text-foreground"> I've Built</span>
           </h2>
           <p className='text-muted-foreground animate-fade-in animation-delay-200'>
             Here are some of the projects I’ve worked on while learning and building as a developer. These projects showcase my ability to design, develop, and solve real problem solving.

@@ -83,7 +83,7 @@ function contacts() {
     }
   };
   return (
-    <section id="contacts" className="py-25 px-6 relative overflow-hidden">
+    <section id="contact" className="py-25 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -95,7 +95,7 @@ function contacts() {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Let's collaborate{" "}
-            <span className="font-serif italic font-normal text-white">
+            <span className="font-serif italic font-normal text-foreground">
               and build something amazing.
             </span>{" "}
           </h2>

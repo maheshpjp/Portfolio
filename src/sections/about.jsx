@@ -37,7 +37,7 @@ function about() {
             <span className="text-secondary-foreground text-sm font-md tracking-wider uppercase">About Me</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">Solving problems with logic,
-            <span className="font-serif italic font-normal text-white"> building solutions with code</span>
+            <span className="font-serif italic font-normal text-foreground"> building solutions with code</span>
           </h2>
           <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
             <p>

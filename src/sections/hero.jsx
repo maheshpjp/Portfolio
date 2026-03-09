@@ -36,7 +36,7 @@ function hero() {
             key={index}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
-              backgroundColor: "#20B2A6",
+              backgroundColor: "var(--color-primary)",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
@@ -64,7 +64,7 @@ function hero() {
                 building{" "}
                 <span className="text-primary glow-text">software</span>
                 <br />
-                <span className="font-serif italic font-normal text-white">
+                <span className="font-serif italic font-normal text-foreground">
                   for tomorrow.
                 </span>
               </h1>
@@ -74,11 +74,11 @@ function hero() {
             </div>
             {/*cta buttons*/}
             <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-300">
-              <Button size="lg">
+              <Button size="lg" href="#contact">
                 Contact Me
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton className="ml-4">
+              <AnimatedBorderButton className="ml-4" href="https://drive.google.com/file/d/1elL6ap5NUYimFEalD0jm7xlCDOvcA5c8/view?usp=drive_link">
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>

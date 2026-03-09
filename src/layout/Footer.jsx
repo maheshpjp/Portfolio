@@ -18,7 +18,7 @@ const footerLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
-  { href: "#contacts", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const Footer = () => {
@@ -31,7 +31,7 @@ export const Footer = () => {
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <a href="#" className="text-xl font-bold tracking-tight">
-              PM<span className="text-primary">.</span>
+              M<span className="text-primary">.</span>pjp
             </a>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Mahesh Kumar Prajapati. All rights reserved.

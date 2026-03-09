@@ -42,9 +42,9 @@ function Navbar() {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
+          className="text-2xl font-bold tracking-tight hover:text-primary"
         >
-          PM<span className="text-primary">.</span>
+          M<span className="text-primary">.</span>pjp
         </a>
 
         <div className="hidden md:flex items-center gap-1">
@@ -62,7 +62,7 @@ function Navbar() {
         </div>
         {/*cta button*/}
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button size="sm" href="#contact">Contact Me</Button>
         </div>
         {/*mobile menu*/}
 
@@ -87,7 +87,7 @@ function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button onClick={()=>setIsMenuOpen(false)} href="#contacts">
+            <Button onClick={()=>setIsMenuOpen(false)} href="#contact">
               Contact Me
             </Button>
           </div>
