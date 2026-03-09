@@ -8,7 +8,7 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import Button from "../components/Button";
+import Button from "../components/button";
 import emailjs from "@emailjs/browser";
 function contacts() {
   const ContactInfo = [
