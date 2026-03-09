@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/button";
+import Button from "../components/Button";
 import { ArrowRight, Download, Github, Linkedin, Instagram, ChevronDown } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 function hero() {
