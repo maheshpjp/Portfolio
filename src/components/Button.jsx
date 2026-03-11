@@ -1,11 +1,11 @@
 import React from 'react'
 
-function button({ className = '', size = 'default', children, href, onClick, ...props }) {
-  const baseClasses = "relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25";
+function Button({ className = '', size = 'default', children, href, onClick, ...props }) {
+  const baseClasses = "relative overflow-hidden rounded-md border border-primary/30 bg-primary/90 text-primary-foreground uppercase tracking-[0.22em] shadow-[0_0_0_1px_rgba(92,255,149,0.1),0_0_28px_rgba(92,255,149,0.12)] transition-all duration-300 hover:bg-primary hover:shadow-[0_0_0_1px_rgba(92,255,149,0.2),0_0_36px_rgba(92,255,149,0.2)] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary";
   const sizeClasses = {
-    sm: 'px-4 py-2 text-sm',
-    default: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    sm: 'px-4 py-2 text-[11px]',
+    default: 'px-6 py-3 text-[12px]',
+    lg: 'px-8 py-4 text-[13px]'
   }
   const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
 
@@ -34,4 +34,4 @@ function button({ className = '', size = 'default', children, href, onClick, ...
   )
 }
 
-export default button
+export default Button

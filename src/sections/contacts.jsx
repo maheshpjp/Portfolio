@@ -3,14 +3,13 @@ import {
   Mail,
   Phone,
   MapPin,
-  Linkedin,
   Send,
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
 import Button from "../components/Button";
 import emailjs from "@emailjs/browser";
-function contacts() {
+function Contacts() {
   const ContactInfo = [
     {
       icon: Mail,
@@ -90,7 +89,7 @@ function contacts() {
       </div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+          <span className="terminal-pill inline-flex rounded-md px-4 py-2 text-[11px] animate-fade-in">
             GET IN TOUCH
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
@@ -105,12 +104,18 @@ function contacts() {
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="glass p-8 rounded-3xl border-primary/30 animate-fade-in animation-delay-300">
+          <div className="section-frame data-card p-8 rounded-3xl animate-fade-in animation-delay-300">
             <form action="" className="space-y-6" onSubmit={handleSubmit}>
+              <div className="data-header">
+                <span className="flex items-center gap-3">
+                  <span className="data-dot" />
+                  <span>Contact</span>
+                </span>
+              </div>
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-2"
                 >
                   Name
                 </label>
@@ -123,13 +128,13 @@ function contacts() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="terminal-input w-full px-4 py-3 rounded-md outline-none transition-all"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-2"
                 >
                   Email
                 </label>
@@ -142,13 +147,13 @@ function contacts() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="terminal-input w-full px-4 py-3 rounded-md outline-none transition-all"
                 />
               </div>
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-2"
                 >
                   Message
                 </label>
@@ -160,7 +165,7 @@ function contacts() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                  className="terminal-input w-full px-4 py-3 rounded-md outline-none transition-all resize-none"
                   rows="5"
                 />
               </div>
@@ -200,8 +205,14 @@ function contacts() {
           </div>
           {/*contact info*/}
           <div className="space-y-6 animate-fade-in animation-delay-400">
-            <div className="glass rounded-3xl p-8">
-              <h3 className="text-xl font-semibold mb-6">
+            <div className="data-card rounded-3xl p-8">
+              <div className="data-header">
+                <span className="flex items-center gap-3">
+                  <span className="data-dot" />
+                  <span>Information</span>
+                </span>
+              </div>
+              <h3 className="text-xl font-semibold mb-6 text-secondary-foreground">
                 Contact Information
               </h3>
               <div className="space-y-4">
@@ -211,13 +222,13 @@ function contacts() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    className="flex items-center gap-4 p-4 rounded-md hover:bg-surface transition-colors group border border-primary/10"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                         {item.label}
                       </div>
                       <div className="font-medium">{item.value}</div>
@@ -228,10 +239,10 @@ function contacts() {
             </div>
 
             {/* Availability Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30">
+            <div className="data-card rounded-3xl p-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium">Currently Available</span>
+                <span className="font-medium uppercase tracking-[0.18em] text-secondary-foreground text-[11px]">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">
                 I'm currently open to new opportunities and exciting projects.
@@ -246,4 +257,4 @@ function contacts() {
   );
 }
 
-export default contacts;
+export default Contacts;

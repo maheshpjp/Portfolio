@@ -10,9 +10,10 @@ import { Footer } from './layout/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="site-shell min-h-screen overflow-x-hidden">
+      <div className="pointer-events-none fixed inset-x-0 top-0 h-px bg-primary/40 animate-pulse-line" />
       <Navbar />
-      <main>
+      <main className="relative">
         <Hero />
         <About />
         <Experience />

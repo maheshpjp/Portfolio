@@ -26,7 +26,7 @@ function BeyondCoding() {
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-nedium tracking-wider uppercase animate-fade-in">
+          <span className="terminal-pill inline-flex rounded-md px-4 py-2 text-[11px] animate-fade-in">
             ACTIVITIES & ACHIEVEMENTS
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
@@ -43,12 +43,18 @@ function BeyondCoding() {
           <div>
             <div>
               {beyondCoding.map((item, idx) => (
-                <div key={idx} className="glass rounded-2xl p-6 mb-8 animate-fade-in" style={{animationDelay: `${(idx+1)*100}ms`}}>
-                  <div className="flex items-center gap-4 mb-2">
-                    <Rocket className="text-primary w-6 h-6" />
+                <div key={idx} className="section-frame data-card rounded-2xl p-6 mb-8 animate-fade-in" style={{animationDelay: `${(idx+1)*100}ms`}}>
+                  <div className="data-header">
+                    <span className="flex items-center gap-3">
+                      <span className="data-dot" />
+                      <span>{item.date}</span>
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-4 mb-2">
+                    <Rocket className="text-primary w-6 h-6 mt-1" />
                     <h3 className="text-xl font-bold text-secondary-foreground">{item.name}</h3>
                   </div>
-                  <p className="text-muted-foreground mb-2">{item.date}</p>
+                  <p className="text-muted-foreground mb-2 uppercase tracking-[0.16em] text-[11px]">{item.date}</p>
                   <p className="text-muted-foreground">{item.description}</p>
                 </div>
               ))}

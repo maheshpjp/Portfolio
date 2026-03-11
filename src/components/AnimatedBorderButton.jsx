@@ -26,12 +26,12 @@ export const AnimatedBorderButton = ({ children, href, onClick, ...props }) => {
       type="button"
       onClick={handleClick}
       {...props}
-      className="relative bg-transparent border border-border 
+      className="relative bg-transparent border border-primary/25 
         text-foreground hover:border-primary/50 transition-all 
         duration-1000 focus:outline-none focus-visible:ring-2 
         focus-visible:ring-primary focus-visible:ring-offset-2 
         disabled:opacity-50 disabled:cursor-not-allowed group 
-        px-8 py-4 text-lg font-medium rounded-full overflow-visible 
+        px-8 py-4 text-[13px] font-medium uppercase tracking-[0.22em] rounded-md overflow-visible 
         animated-border"
     >
       {/* Animated SVG Border */}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
-function about() {
+function About() {
   const highlights = [
     {
       icon: Code2,
@@ -29,17 +29,17 @@ function about() {
   ];
   return (
     <section id="about" className="py-25 px-6 relative overflow-hidden">
-      <div className="conatiner mx-auto px-6 realtive z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 items-center gap-12">
           {/*left*/}
           <div className="space-y-8">
             <div className="animate-fade-in">
-            <span className="text-secondary-foreground text-sm font-md tracking-wider uppercase">About Me</span>
+            <span className="terminal-pill inline-flex rounded-md px-4 py-2 text-[11px]">About Me</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">Solving problems with logic,
             <span className="font-serif italic font-normal text-foreground"> building solutions with code</span>
           </h2>
-          <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
+          <div className="section-frame glass-strong p-6 md:p-8 space-y-4 text-muted-foreground animate-fade-in animation-delay-200 leading-8">
             <p>
               I am a passionate software developer who enjoys building software and turning ideas into working applications. I like solving problems through code and understanding how different parts of a system work together. Working on projects helps me learn new concepts and improve the way I design and build applications.
             </p>
@@ -47,7 +47,13 @@ function about() {
               I am always trying to improve my skills by exploring new technologies and building things that challenge me. My goal is to grow as a software developer and contribute to building useful and scalable products that people can rely on.
             </p>
           </div>
-          <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
+          <div className="data-card rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
+            <div className="data-header">
+              <span className="flex items-center gap-3">
+                <span className="data-dot" />
+                <span>Mission</span>
+              </span>
+            </div>
             <p className="text-lg font-medium italic text-foreground">
               "My mission is to solve real-world problems by learning and building scalable and reliable software"
             </p>
@@ -56,9 +62,15 @@ function about() {
         {/*right*/}
         <div className="grid sm:grid-cols-2 gap-6">
           {highlights.map((item,idx) => (
-            <div key={idx} className="glass rounded-2xl p-6 animate-fade-in" style={{animationDelay:`${(idx+1)*100}ms` }}>
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20"><item.icon className="w-6 h-6 text-primary"/></div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+            <div key={idx} className="data-card rounded-2xl p-6 animate-fade-in" style={{animationDelay:`${(idx+1)*100}ms` }}>
+              <div className="data-header">
+                <span className="flex items-center gap-3">
+                  <span className="data-dot" />
+                  <span>{item.title}</span>
+                </span>
+              </div>
+              <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20"><item.icon className="w-6 h-6 text-primary"/></div>
+              <h3 className="text-lg font-semibold mb-2 text-secondary-foreground">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.description}</p>
             </div>  
           ))}
@@ -69,4 +81,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;
