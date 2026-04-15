@@ -23,7 +23,7 @@ function Projects() {
       description: "A weather and news dashboard built using React and various APIs. It provides users with real-time weather updates and the latest news headlines in a visually appealing interface.",
       image: "/weather-news.png",
       tags : ["React", "APIs"],
-      link: "#",
+      link: "https://weather-news-dashboard-theta.vercel.app/",
       github: "https://github.com/maheshpjp/weather-news-dashboard"
     },
     {
