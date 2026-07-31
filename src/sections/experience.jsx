@@ -3,12 +3,21 @@ import React from "react";
 function Experience() {
   const experiences = [
     {
-      period: "june 2025 - august 2025",
+      period: "1 june 2025 - 15 august 2025",
       role: "React Native Developer Intern",
       company: "ProdigalAI",
       description:
         "Contributed to the development of a mobile application using React Native, implementing new features and optimizing performance. Collaborated with the design and backend teams to ensure seamless integration and a smooth user experience.",
       technologies: ["React Native", "JavaScript", "Git"],
+      current: false,
+    },
+    {
+      period: "25 May 2026 - 2 July 2025",
+      role: "Full Stack Developer Intern",
+      company: "IOCL",
+      description:
+        "Implemented simulation management, supplier/customer/refinery/cargo modules, inventory projections, role-based access control, SAP master data synchronization, and Excel export while collaborating with domain experts to streamline LNG planning workflows.",
+      technologies: ["Python", "Django", "SQLite3", "HTML", "CSS", "JavaScript", "Bootstrap", "Git/GitHub", "SAP API Integration", "Excel"],
       current: false,
     },
     {
